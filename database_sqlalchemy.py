@@ -1,4 +1,5 @@
 # database_sqlalchemy.py
+# 2nd commit
 
 import sqlite3, sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
@@ -31,10 +32,11 @@ session = Session()
 
 
 class Data:
+    '''Gather User Data'''
 
     def get_data(self):
         self.name = raw_input("What's The Name? ")
-        self.age = input("What's Your Age? ")
+        self.age = input("What's The Age? ")
 
     def add_data(self):
         new_person = Test(name=self.name, age=self.age)
@@ -46,4 +48,17 @@ if __name__ == '__main__':
     person = Data()
     person.get_data()
     person.add_data()
+    #session.close()
+        
+    
+    more_users = 'y'
+    while more_users == 'y':
+        more_users = raw_input("Would You Like To Add Another User? ")
+        if more_users == 'n':
+            print("Goodbye")
+            break
+        person = Data()
+        person.get_data()
+        person.add_data()        
+        
     session.close()
