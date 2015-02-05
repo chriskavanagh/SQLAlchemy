@@ -1,5 +1,6 @@
 # database_sqlalchemy.py
-# 2nd commit
+# 3rd commit
+
 
 import sqlite3, sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
@@ -48,7 +49,7 @@ if __name__ == '__main__':
     person = Data()
     person.get_data()
     person.add_data()
-    #session.close()
+    print("User: %s added. . ." % person.name)
         
     
     more_users = 'y'
